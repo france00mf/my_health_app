@@ -8,8 +8,19 @@ class OnboardView extends StatefulWidget {
 }
 
 class _OnboardViewState extends State<OnboardView> {
+  PageController pageController = PageController(initialPage: 0);
+  int currentIndex=0;
+
+  @override
+  void dispose(){
+    pageController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    
     return Scaffold(
       body: Column(
         children: [
