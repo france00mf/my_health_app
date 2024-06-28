@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1038757164108",
+    "project_id": "my-health-app-ao",
+    "storage_bucket": "my-health-app-ao.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038757164108:android:9a0151eb0afa8bb99d30e9",
+        "android_client_info": {
+          "package_name": "com.example.my_health_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5xoZYyxsuum3eAwHuw-7ix8xgMbQMrFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
