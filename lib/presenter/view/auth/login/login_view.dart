@@ -16,7 +16,7 @@ class _LoginViewState extends State<LoginView> {
   Future<void> _signInWithEmailAndPassword() async {
     try {
         print("Logando com o email: ${emailController.text.trim()}");
-        final UserCredencial userCredencial = await _auth.signInWithEmailAndPassword(
+        final UserCredential userCredencial = await _auth.signInWithEmailAndPassword(
           email: emailController.text.trim(),
           password: passwordController.text.trim()
         );
