@@ -16,10 +16,20 @@ class _LoginViewState extends State<LoginView> {
   Future<void> _signInWithEmailAndPassword() async {
     try {
         print("Logando com o email: ${emailController.text.trim()}");
-
-
+        final UserCredencial userCredencial = await _auth.signInWithEmailAndPassword(
+          email: emailController.text.trim(),
+          password: passwordController.text.trim()
+        );
+        final User? user = userCredencial.user;
+        print("Usuádio logado em -> ${user!.email}");
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('${user.email} Logado'),)
+        )
     } catch (e) {
-      
+      print("Falha ao logar apontado em $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Falha , verifique o Email e a palavra passe $e'))
+      );
     }
   }
 
