@@ -3,15 +3,16 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:my_health_app/onboard_view.dart';
+import 'package:my_health_app/presenter/components/loading_progress.dart';
 
-class Splash extends StatefulWidget {
-  const Splash({super.key});
+class SpashView extends StatefulWidget {
+  const SpashView({super.key});
 
   @override
-  State<Splash> createState() => _SplashState();
+  State<SpashView> createState() => _SpashViewState();
 }
 
-class _SplashState extends State<Splash> {
+class _SpashViewState extends State<SpashView> {
   @override
   void initState() {
     Timer(Duration.zero, () {
@@ -23,8 +24,12 @@ class _SplashState extends State<Splash> {
   
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(),
+    return  const SafeArea(
+      child: Column(
+        children: [
+          MyLoading()
+        ],
+      ),
     );
   }
 }

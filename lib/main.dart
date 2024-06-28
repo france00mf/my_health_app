@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_health_app/firebase_options.dart';
+import 'package:my_health_app/presenter/view/home/home_view.dart';
 import 'package:my_health_app/splash_view.dart';
 
 main() async{
@@ -29,9 +30,9 @@ class MyWidget extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if(snapshot.hasData){
-            return Home()
+            return HomeView();
           }else{
-
+           return SpashView();
           }
         }
       ),
