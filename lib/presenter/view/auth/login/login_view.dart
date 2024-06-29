@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_health_app/core/presenters/components/theme/theme.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -36,6 +37,43 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: AppColor.kWhite,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      body: SingleChildScrollView(
+        padding:  const EdgeInsets.symmetric(horizontal: 24),
+        child: SizedBox(
+          width: 330,
+          child: Column(
+            children: [
+              Text('Olá, Bemvindo de volta',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.plusJakartaSans(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+              ).copyWith(color: AppColors.kGrayscaleDark100, fontSize: 24)
+              ),
+              const SizedBox(height: 8),
+              Text("Gostamos de lhe receber novamente, Faça o login",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.plusJakartaSans(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: AppColor.kWhite)
+                    .copyWith(color: AppColor.kGrayscale40, fontSize: 14),
+              ),
+              const SizedBox(height: 36,),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [Widget],
+              )
+            ],
+          ),
+        ),
+      )
+    );
   }
 }
