@@ -1,6 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_health_app/presenter/view/auth/register/register_view.dart';
+
+import 'component/primary_button.dart';
 
 class OnboardView extends StatefulWidget {
   const OnboardView({super.key});
