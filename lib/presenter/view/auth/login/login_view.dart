@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_health_app/core/presenters/components/theme/theme.dart';
 
 class LoginView extends StatefulWidget {
@@ -54,7 +55,7 @@ class _LoginViewState extends State<LoginView> {
               style: GoogleFonts.plusJakartaSans(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
-              ).copyWith(color: AppColors.kGrayscaleDark100, fontSize: 24)
+              ).copyWith(color: AppColor.kGrayscaleDark100, fontSize: 24)
               ),
               const SizedBox(height: 8),
               Text("Gostamos de lhe receber novamente, Faça o login",
@@ -68,7 +69,7 @@ class _LoginViewState extends State<LoginView> {
               const SizedBox(height: 36,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Widget],
+                children: [],
               )
             ],
           ),
