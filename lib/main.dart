@@ -5,13 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:my_health_app/firebase_options.dart';
 import 'package:my_health_app/presenter/view/home/home_view.dart';
 import 'package:my_health_app/splash_view.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 
 main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlataform
+    options: DefaultFirebaseOptions.currentPlatform,
   );
- runApp(MyWidget()); 
+ runApp(const MyWidget()); 
 }
 
 class MyWidget extends StatelessWidget {

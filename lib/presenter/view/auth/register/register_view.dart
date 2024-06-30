@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_health_app/core/app_constants/theme/theme.dart';
+import 'package:my_health_app/core/presenters/components/password_text_field.dart';
 import 'package:my_health_app/core/presenters/components/primary_text_form_field.dart';
 
 class RegisterView extends StatefulWidget {
@@ -154,7 +155,14 @@ class _RegisterViewState extends State<RegisterView> {
                 ),
                 const SizedBox(height: 8,),
 
-                
+                PasswordTextField(
+                  borderRadius: BorderRadius.circular(24),
+                      hintText: 'Palavra Passe',
+                      controller: passwordController,
+                      width: 327,
+                      height: 52
+                )
+
               ],
             )
 
