@@ -2,7 +2,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:my_health_app/onboard_view.dart';
+import 'package:my_health_app/onboard/presenter/component/onboard_view.dart';
 import 'package:my_health_app/presenter/components/loading_progress.dart';
 
 class SpashView extends StatefulWidget {

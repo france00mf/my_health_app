@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_health_app/core/presenters/components/theme/theme.dart';
+import 'package:my_health_app/core/app_constants/theme/theme.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

@@ -1,9 +1,12 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_health_app/core/presenters/components/custom_widget_animated.dart';
 import 'package:my_health_app/presenter/view/auth/register/register_view.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'component/primary_button.dart';
+import '../../data/model/item_mode.dart';
+import 'primary_button.dart';
 
 class OnboardView extends StatefulWidget {
   const OnboardView({super.key});
@@ -33,7 +36,7 @@ class _OnboardViewState extends State<OnboardView> {
             flex: 3,
             child: PageView.builder(
               controller: pageController,
-              itemCout: listOfItems.length,
+              itemCount: listOfItems.length,
               onPageChanged: (newIndex){
                 setState(
                   (){
@@ -72,7 +75,7 @@ class _OnboardViewState extends State<OnboardView> {
                       ),
                       const SizedBox(height: 20,),
                       Padding(padding: const EdgeInsets.symmetric(horizontal: 40), 
-                      child: CustomAnimatedWidget(
+                      child: CustomWidgetAnimated(
                       index: index,
                       delay: 500,
                       child: Text(
@@ -156,60 +159,4 @@ class _OnboardViewState extends State<OnboardView> {
 
 
 
-class CustomAnimatedWidget extends StatelessWidget {
-  final int index;
-  final int delay;
-  final Widget child;
-  const CustomAnimatedWidget(
-      {super.key,
-      required this.index,
-      required this.delay,
-      required this.child});
 
-  @override
-  Widget build(BuildContext context) {
-    if (index == 1) {
-      return FadeInDown(
-        delay: Duration(milliseconds: delay),
-        child: child,
-      );
-    }
-    return FadeInUp(
-      delay: Duration(milliseconds: delay),
-      child: child,
-    );
-  }
-}
-
-class Items {
-  final String img;
-  final String title;
-  final String subTitle;
-
-  ///
-  Items({
-    required this.img,
-    required this.title,
-    required this.subTitle,
-  });
-}
-
-List<Items> listOfItems = [
-  Items(
-    img: "assets/1.png",
-    title: "Bemvindo!",
-    subTitle: "Revolucione a maneira como você gerencia sua saúde, começando agora",
-  ),
-  Items(
-    img: "assets/2.png",
-    title: "Explore soluções avançadas de saúde",
-    subTitle:
-        "Acesse todas as ferramentas essenciais de saúde em um local conveniente - sem necessidade de alternar entre os aplicativos!",
-  ),
-  Items(
-    img: "assets/3.png",
-    title: "Análise Instantânea de Doenças",
-    subTitle:
-        "Digitalize imagens para identificação precisa de doenças e prescrições personalizadas.",
-  ),
-];
