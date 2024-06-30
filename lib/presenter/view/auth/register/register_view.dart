@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_health_app/core/app_constants/theme/theme.dart';
 import 'package:my_health_app/core/presenters/components/password_text_field.dart';
 import 'package:my_health_app/core/presenters/components/primary_text_form_field.dart';
+import 'package:my_health_app/presenter/view/auth/login/login_view.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -164,7 +165,50 @@ class _RegisterViewState extends State<RegisterView> {
                 )
 
               ],
-            )
+            ),
+            SizedBox(height: 8),
+
+            Column(children: [
+              PrimaryButton(
+                onTap: ()async{
+                  try {
+                    UserCredencial userCredencial = await _auth.createUserWithEmailAndPassword(email: emailController.text.trim(), password: passwordController.text.trim());
+
+                    print('Esta é a resposta do metodo criar ${userCredencial.user!.uid}');
+
+                    name = '${firstName.text} ${listName.text}';
+
+                    print('Nome do Usuário $name');
+
+                    if(userCredencial.user != null){
+                      CollectionReference users = FirebaseFirestore.instance.collection;
+                      await user.doc(userCredencial.user!.uid).set
+                      ({
+                          'id': userCredential.user!.uid,
+                          'image': '',
+                          'name': name,
+                          'email': emailController.text.trim(),
+                      });
+                      print('$users ->Usuário adicionado no firestore');
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Registo feito com sucesso"))
+                      );
+                    }
+                  } catch (e) {
+                    print(e);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                       SnackBar(content: Text(e.toString()))
+                    );
+                  }
+
+                  Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const LoginView()),
+                      );
+                }
+              )
+            ],)
 
           ],
         ),

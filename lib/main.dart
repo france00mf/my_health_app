@@ -32,9 +32,9 @@ class MyWidget extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if(snapshot.hasData){
-            return HomeView();
+            return const HomeView();
           }else{
-           return SpashView();
+           return const SpashView();
           }
         }
       ),
