@@ -1,4 +1,6 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OnboardView extends StatefulWidget {
   const OnboardView({super.key});
@@ -120,7 +122,7 @@ class _OnboardViewState extends State<OnboardView> {
                      Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SignInScreen()),
+                                builder: (context) => RegisterView()),
                           );
                   },
                   text: 'Começar'
@@ -192,19 +194,19 @@ class Items {
 List<Items> listOfItems = [
   Items(
     img: "assets/1.png",
-    title: "Welcome to HealWiz!",
-    subTitle: "Revolutionize the way you manage your health, starting now",
+    title: "Bemvindo!",
+    subTitle: "Revolucione a maneira como você gerencia sua saúde, começando agora",
   ),
   Items(
     img: "assets/2.png",
-    title: "Explore Advanced Healthcare Solutions",
+    title: "Explore soluções avançadas de saúde",
     subTitle:
-        "Access all essential healthcare tools in one convenient place- no more switching between the apps!",
+        "Acesse todas as ferramentas essenciais de saúde em um local conveniente - sem necessidade de alternar entre os aplicativos!",
   ),
   Items(
     img: "assets/3.png",
-    title: " Instant Disease Analysis",
+    title: "Análise Instantânea de Doenças",
     subTitle:
-        "Scan images for accurate disease identification and personalized prescriptions.",
+        "Digitalize imagens para identificação precisa de doenças e prescrições personalizadas.",
   ),
 ];
