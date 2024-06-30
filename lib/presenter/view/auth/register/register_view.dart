@@ -137,6 +137,25 @@ class _RegisterViewState extends State<RegisterView> {
                       width: 327,
                       height: 52),
               ],
+            ),
+            const SizedBox(height: 7,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Palavra Passe',
+                 style: GoogleFonts.plusJakartaSans(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: AppColor.kWhite)
+                        .copyWith(
+                            color: AppColor.kGrayscaleDark100,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14),
+                ),
+                const SizedBox(height: 8,),
+
+                
+              ],
             )
 
           ],

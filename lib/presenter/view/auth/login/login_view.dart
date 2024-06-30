@@ -26,7 +26,7 @@ class _LoginViewState extends State<LoginView> {
         print("Usuádio logado em -> ${user!.email}");
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('${user.email} Logado'),)
-        )
+        );
     } catch (e) {
       print("Falha ao logar apontado em $e");
       ScaffoldMessenger.of(context).showSnackBar(
