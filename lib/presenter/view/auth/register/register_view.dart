@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_health_app/core/app_constants/app_strings/app_string.dart';
 import 'package:my_health_app/core/app_constants/images/images_constants.dart';
 import 'package:my_health_app/core/app_constants/theme/theme.dart';
 import 'package:my_health_app/core/presenters/components/divider_widget.dart';
@@ -9,6 +10,8 @@ import 'package:my_health_app/core/presenters/components/primary_text_form_field
 import 'package:my_health_app/presenter/view/auth/login/login_view.dart';
 
 import '../../../../core/presenters/components/secondary_button.dart';
+import '../../../../core/presenters/components/terms_and_privacy_text.dart';
+import '../../../../onboard/presenter/component/primary_button.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -211,7 +214,7 @@ class _RegisterViewState extends State<RegisterView> {
                         MaterialPageRoute(builder: (context) => const LoginView()),
                       );
                 },
-                    text: 'Create Account',
+                    text: AppStrings.createAccount,
                     bgColor: AppColor.bgColor,
                     borderRadius: 20,
                     height: 46,
@@ -220,8 +223,8 @@ class _RegisterViewState extends State<RegisterView> {
               ),
               const SizedBox(height: 20,),
               CustomRickText( 
-                title: 'Já tem uma conta',
-                subtitle: 'Logar',
+                title: AppStrings.areadyAccount,
+                subtitle: AppStrings.singIn,
                 onTap: (){},
                 subtitleTextStyle: GoogleFonts.plusJakartaSans(
                             fontSize: 14,
@@ -239,7 +242,7 @@ class _RegisterViewState extends State<RegisterView> {
             child: Column(
               children: [
               const Padding(padding: EdgeInsets.symmetric(horizontal: 15),
-                child: DividerRow(title: 'Ou cadastra-se com'),
+                child: DividerRow(title: AppStrings.singUpWidth),
                 ),
                 const SizedBox(height: 24),
                 
@@ -256,7 +259,7 @@ class _RegisterViewState extends State<RegisterView> {
                 const SizedBox(height: 20,),
 
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 40),
-                child: TermsAndPrivaryText(
+                child: TermsAndPrivacyText(
                     title1: '  Ao Logar-se voce aceita com os',
                   title2: ' Termos ',
                   title3: '  e',
