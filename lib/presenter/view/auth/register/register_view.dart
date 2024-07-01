@@ -1,10 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_health_app/core/app_constants/images/images_constants.dart';
 import 'package:my_health_app/core/app_constants/theme/theme.dart';
+import 'package:my_health_app/core/presenters/components/divider_widget.dart';
 import 'package:my_health_app/core/presenters/components/password_text_field.dart';
 import 'package:my_health_app/core/presenters/components/primary_text_form_field.dart';
 import 'package:my_health_app/presenter/view/auth/login/login_view.dart';
+
+import '../../../../core/presenters/components/secondary_button.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -206,9 +210,62 @@ class _RegisterViewState extends State<RegisterView> {
                         context,
                         MaterialPageRoute(builder: (context) => const LoginView()),
                       );
-                }
+                },
+                    text: 'Create Account',
+                    bgColor: AppColor.bgColor,
+                    borderRadius: 20,
+                    height: 46,
+                    width: 327,
+                    textColor: AppColor.kWhite,
+              ),
+              const SizedBox(height: 20,),
+              CustomRickText( 
+                title: 'Já tem uma conta',
+                subtitle: 'Logar',
+                onTap: (){},
+                subtitleTextStyle: GoogleFonts.plusJakartaSans(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: AppColor.kWhite)
+                        .copyWith(
+                            color: AppColor.kGrayscaleDark100,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14),
               )
-            ],)
+            ],),
+
+             const SizedBox(height: 30),
+             Padding(padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: Column(
+              children: [
+              const Padding(padding: EdgeInsets.symmetric(horizontal: 15),
+                child: DividerRow(title: 'Ou cadastra-se com'),
+                ),
+                const SizedBox(height: 24),
+                
+                SecondaryButton(
+                        height: 56,
+                        textColor: AppColor.kGrayscaleDark100,
+                        width: 260,
+                        onTap: () {},
+                        borderRadius: 24,
+                        bgColor: AppColor.kBackground.withOpacity(0.3),
+                        text: 'Continuar com Google',
+                        icons: ImagesPath.kGoogleIcon),
+
+                const SizedBox(height: 20,),
+
+                const Padding(padding: EdgeInsets.symmetric(horizontal: 40),
+                child: TermsAndPrivaryText(
+                    title1: '  Ao Logar-se voce aceita com os',
+                  title2: ' Termos ',
+                  title3: '  e',
+                  title4: ' Condições de Uso',
+                ),
+                )
+              ],
+            ), 
+            )
 
           ],
         ),
