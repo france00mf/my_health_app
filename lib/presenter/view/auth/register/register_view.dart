@@ -44,7 +44,7 @@ class _RegisterViewState extends State<RegisterView> {
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            Text('Criar Conta',
+            Text(AppStrings.createAccount,
             textAlign: TextAlign.center,
             style: GoogleFonts.plusJakartaSans(
               fontSize: 20,
@@ -55,7 +55,7 @@ class _RegisterViewState extends State<RegisterView> {
                     fontSize: 24)
             ),
             const SizedBox(height: 8),
-            Text('Feliz por te ver, regista-se e use a app',
+            Text(AppStrings.signUpPhrase,
             textAlign: TextAlign.center,
             style: GoogleFonts.plusJakartaSans(
                         fontSize: 14,
@@ -73,7 +73,7 @@ class _RegisterViewState extends State<RegisterView> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Primeiro Nome',
+                    Text(AppStrings.lastName,
                     style: GoogleFonts.plusJakartaSans(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -86,7 +86,7 @@ class _RegisterViewState extends State<RegisterView> {
                     const SizedBox(height: 8,),
                     PrimaryTextFormField(
                       borderRadius: BorderRadius.circular(24),
-                      hintText: 'Primeiro',
+                      hintText: AppStrings.first,
                       controller: firstName,
                       width: 155,
                       height: 52
@@ -96,7 +96,7 @@ class _RegisterViewState extends State<RegisterView> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Ultimo Nome',
+                    Text(AppStrings.lastName,
                            style: GoogleFonts.plusJakartaSans(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -112,7 +112,7 @@ class _RegisterViewState extends State<RegisterView> {
                   ),
                   PrimaryTextFormField(
                     borderRadius: BorderRadius.circular(24),
-                    hintText: 'Ultimo',
+                    hintText: AppStrings.last,
                     controller: listName,
                     width: 155,
                     height: 52
@@ -128,7 +128,7 @@ class _RegisterViewState extends State<RegisterView> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                  Text("Email",
+                  Text(AppStrings.email,
                           style: GoogleFonts.plusJakartaSans(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -141,7 +141,7 @@ class _RegisterViewState extends State<RegisterView> {
                   const SizedBox(height: 7,),
                    PrimaryTextFormField(
                       borderRadius: BorderRadius.circular(24),
-                      hintText: 'francisco.jose@gmail.com',
+                      hintText: AppStrings.emailExemp,
                       controller: emailController,
                       width: 327,
                       height: 52),
@@ -151,7 +151,7 @@ class _RegisterViewState extends State<RegisterView> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Palavra Passe',
+                Text(AppStrings.password,
                  style: GoogleFonts.plusJakartaSans(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -165,7 +165,7 @@ class _RegisterViewState extends State<RegisterView> {
 
                 PasswordTextField(
                   borderRadius: BorderRadius.circular(24),
-                      hintText: 'Palavra Passe',
+                      hintText: AppStrings.password,
                       controller: passwordController,
                       width: 327,
                       height: 52
@@ -199,7 +199,7 @@ class _RegisterViewState extends State<RegisterView> {
                       print('$users ->Usuário adicionado no firestore');
 
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("Registo feito com sucesso"))
+                        const SnackBar(content: Text(AppStrings.singUpWidth))
                       );
                     }
                   } catch (e) {
@@ -253,17 +253,17 @@ class _RegisterViewState extends State<RegisterView> {
                         onTap: () {},
                         borderRadius: 24,
                         bgColor: AppColor.kBackground.withOpacity(0.3),
-                        text: 'Continuar com Google',
+                        text: AppStrings.singInGoogle,
                         icons: ImagesPath.kGoogleIcon),
 
                 const SizedBox(height: 20,),
 
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 40),
                 child: TermsAndPrivacyText(
-                    title1: '  Ao Logar-se voce aceita com os',
-                  title2: ' Termos ',
-                  title3: '  e',
-                  title4: ' Condições de Uso',
+                  title1: AppStrings.termsAndCond1,
+                  title2: AppStrings.termsAndCond2,
+                  title3: AppStrings.termsAndCond3,
+                  title4: AppStrings.termsAndCond4,
                 ),
                 )
               ],
