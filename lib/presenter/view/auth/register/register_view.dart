@@ -9,6 +9,7 @@ import 'package:my_health_app/core/presenters/components/password_text_field.dar
 import 'package:my_health_app/core/presenters/components/primary_text_form_field.dart';
 import 'package:my_health_app/presenter/view/auth/login/login_view.dart';
 
+import '../../../../core/presenters/components/custom_rich_text.dart';
 import '../../../../core/presenters/components/secondary_button.dart';
 import '../../../../core/presenters/components/terms_and_privacy_text.dart';
 import '../../../../onboard/presenter/component/primary_button.dart';
@@ -222,7 +223,7 @@ class _RegisterViewState extends State<RegisterView> {
                     textColor: AppColor.kWhite,
               ),
               const SizedBox(height: 20,),
-              CustomRickText( 
+              CustomRichText( 
                 title: AppStrings.areadyAccount,
                 subtitle: AppStrings.singIn,
                 onTap: (){},
